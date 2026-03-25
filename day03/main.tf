@@ -7,9 +7,14 @@ terraform {
   }
   
   }
+  #creating vpc 
+  resource "aws_vpc" "home_vpc" {
+  cidr_block = "10.0.0.0/16"
+  }
+
   #configure the aws provider
-provider "aws" {
-  region = "ap-south-1"
+    provider "aws" {
+    region = "ap-south-1"
 }
 #create a sc3 bucket
 resource "aws_s3_bucket" "home_bucket" {
